@@ -1,0 +1,2 @@
+# TextFlow — Zero external dependencies
+# Requires Python 3.8+
