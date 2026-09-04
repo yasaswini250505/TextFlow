@@ -43,7 +43,7 @@ def remove_html_tags(text, **kwargs):
 
 
 def remove_punctuation(text, keep="", **kwargs):
-     """
+    """
     Remove punctuation characters from text.
 
     Args:

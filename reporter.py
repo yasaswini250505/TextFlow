@@ -85,7 +85,7 @@ def format_readability(readability):
     return lines
 
 
-def format_keyboards(keywords):
+def format_keywords(keywords):
     """Format keyboard density table."""
     lines = section_header("KEYWORD DENSITY  (Top 10)")
     if not keywords:

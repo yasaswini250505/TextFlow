@@ -4,7 +4,7 @@
 
 
 def run_pipeline(text, stages):
-     """
+    """
     Run a list of stage functions on text in order.
 
     Args:
@@ -19,6 +19,7 @@ def run_pipeline(text, stages):
     log     = []
 
     for stage_name, stage_func, config in stages:
+        print(f"Running stage: {stage_name}...")
         before  = len(current)
         current = stage_func(current, **config)
         after   = len(current)
@@ -51,7 +52,7 @@ def log_summary(log):
     if not log:
         return {}
 
-    total_removed = sum(entry["removed"] for entey in log)
+    total_removed = sum(entry["removed"] for entry in log)
     stages_run    = len(log)
 
     return {

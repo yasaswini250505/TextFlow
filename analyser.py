@@ -109,7 +109,7 @@ def reading_level(score):
 # ── Keyword density ───────────────────────────────────────────────────────────
 
 
-def keyboard_density(text, top_n=10, exclude_stops=True):
+def keyword_density(text, top_n=10, exclude_stops=True):
     """
     Compute keyword frequency and density (% of total words).
 
