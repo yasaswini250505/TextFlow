@@ -123,5 +123,5 @@ if __name__ == "__main__":
     )
 
     # Uncomment to try other pipelines:
-    # run_textflow(pipeline_name="light")
-    # run_textflow(pipeline_name="keyword")
+run_textflow(pipeline_name="light")
+run_textflow(pipeline_name="keyword")

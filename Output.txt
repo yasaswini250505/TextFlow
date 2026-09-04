@@ -1,0 +1,344 @@
+TextFlow  |  Pipeline: 'standard'
+------------------------------------------------------------
+ Stages : 11
+ → normalise_unicode
+ → expand_contractions
+ → remove_urls
+ → remove_html
+ → remove_emails
+ → to_lowercase
+ → remove_punctuation config={'keep': ''}
+ → remove_stopwords config={'lang': 'en'}
+ → filter_short config={'min_length': 3}
+ → dedup_sentences
+ → strip_whitespace
+Running stage: normalise_unicode...
+Running stage: expand_contractions...
+Running stage: remove_urls...
+Running stage: remove_html...
+Running stage: remove_emails...
+Running stage: to_lowercase...
+Running stage: remove_punctuation...
+Running stage: remove_stopwords...
+Running stage: filter_short...
+Running stage: dedup_sentences...
+Running stage: strip_whitespace...
+==============================================================
+               TextFlow — Text Analytics Report               
+==============================================================
+  Pipeline      : standard
+  Stages run    : 11
+  Input chars   : 830
+  Output chars  : 611
+  Chars removed : 219  (26.4%)
+==============================================================
+
+PIPELINE STAGE LOG
+--------------------------------------------------------------
+ Stage                      Before   After  Removed
+  --------------------------------------------------------------
+ normalise_unicode              830      833        -3
+ expand_contractions            833      837        -4
+ remove_urls                    837      837         0
+ remove_html                    837      825        12 <
+ remove_emails                  825      825         0
+ to_lowercase                   825      825         0
+ remove_punctuation             825      794        31 <
+ remove_stopwords               794      611       183 <
+ filter_short                   611      611         0
+ dedup_sentences                611      611         0
+ strip_whitespace               611      611         0
+
+TEXT PREVIEW  (Original)
+--------------------------------------------------------------
+  
+TextFlow is an amazing text processing pipeline built entirely with Python.
+It doesn't use any external libraries — it can't rely on pandas or NLTK.
+The system won't fail even with messy input like U...
+
+TEXT PREVIEW  (Processed)
+--------------------------------------------------------------
+  textflow amazing text processing pipeline built entirely python use external libraries cannot rely pandas nltk system fail messy input like urls httpsexamplecom html tags bold text line breaks pipelin...
+
+WORD STATISTICS (Original)
+--------------------------------------------------------------
+ Word count      : 126
+ Unique words    : 96
+ Sentence count  : 11
+ Avg word length : 5.4 chars
+ Avg sent length : 11.5 words
+ Longest word    : (https://example.com)
+ Shortest word   : —
+
+WORD STATISTICS (Processed)
+--------------------------------------------------------------
+ Word count      : 82
+ Unique words    : 70
+ Sentence count  : 1
+ Avg word length : 6.5 chars
+ Avg sent length : 82.0 words
+ Longest word    : httpsexamplecom
+ Shortest word   : use
+
+READABILITY (Flesch Reading Ease)
+--------------------------------------------------------------
+  Score   : 62.3 / 100
+  Level   : Standard (8th-9th grade)
+  [██████████████████░░░░░░░░░░░░]
+
+  Score guide:
+  90-100  Very Easy  (5th grade)
+  70-80   Easy        (6th-7th grade)
+  60-70   Standard    (8th-9th grade)
+  50-60   Fairly Difficult
+  30-50   Difficult   (college level)
+  0-30    Very Difficult
+
+KEYWORD DENSITY  (Top 10)
+--------------------------------------------------------------
+  Keyword               Count  Density Chart
+  --------------------------------------------------------------
+  text                      3    3.66% ███████████████
+  pipeline                  3    3.66% ███████████████
+  built                     3    3.66% ███████████████
+  processing                2    2.44% ██████████░░░░░
+  python                    2    2.44% ██████████░░░░░
+  libraries                 2    2.44% ██████████░░░░░
+  modular                   2    2.44% ██████████░░░░░
+  clean                     2    2.44% ██████████░░░░░
+  data                      2    2.44% ██████████░░░░░
+  textflow                  1    1.22% █████░░░░░░░░░░
+
+SENTIMENT ANALYSIS  (Rule-based)
+--------------------------------------------------------------
+  Score           :     0.6 (range -1.0 to +1.0)
+  Label            : Positive
+  [░░░░░░░░░░░░░░░█████████░░░░░░]
+  Negative <──────────────────────> Positive
+
+  Positive signals: 8  words
+  Negative signals: 2  words
+  Top positive    : ['amazing', 'clean', 'easy', 'love', 'best']
+  Top negative    : ['fail', 'complex']
+
+TextFlow  |  Pipeline: 'light'
+------------------------------------------------------------
+ Stages : 6
+ → normalise_unicode
+ → expand_contractions
+ → remove_urls
+ → remove_html
+ → to_lowercase
+ → strip_whitespace
+Running stage: normalise_unicode...
+Running stage: expand_contractions...
+Running stage: remove_urls...
+Running stage: remove_html...
+Running stage: to_lowercase...
+Running stage: strip_whitespace...
+==============================================================
+               TextFlow — Text Analytics Report               
+==============================================================
+  Pipeline      : light
+  Stages run    : 6
+  Input chars   : 830
+  Output chars  : 825
+  Chars removed : 5  (0.6%)
+==============================================================
+
+PIPELINE STAGE LOG
+--------------------------------------------------------------
+ Stage                      Before   After  Removed
+  --------------------------------------------------------------
+ normalise_unicode              830      833        -3
+ expand_contractions            833      837        -4
+ remove_urls                    837      837         0
+ remove_html                    837      825        12 <
+ to_lowercase                   825      825         0
+ strip_whitespace               825      825         0
+
+TEXT PREVIEW  (Original)
+--------------------------------------------------------------
+  
+TextFlow is an amazing text processing pipeline built entirely with Python.
+It doesn't use any external libraries — it can't rely on pandas or NLTK.
+The system won't fail even with messy input like U...
+
+TEXT PREVIEW  (Processed)
+--------------------------------------------------------------
+  textflow is an amazing text processing pipeline built entirely with python. it does not use any external libraries -- it cannot rely on pandas or nltk. the system will not fail even with messy input l...
+
+WORD STATISTICS (Original)
+--------------------------------------------------------------
+ Word count      : 126
+ Unique words    : 96
+ Sentence count  : 11
+ Avg word length : 5.4 chars
+ Avg sent length : 11.5 words
+ Longest word    : (https://example.com)
+ Shortest word   : —
+
+WORD STATISTICS (Processed)
+--------------------------------------------------------------
+ Word count      : 131
+ Unique words    : 98
+ Sentence count  : 11
+ Avg word length : 5.2 chars
+ Avg sent length : 11.9 words
+ Longest word    : (https://example.com)
+ Shortest word   : (
+
+READABILITY (Flesch Reading Ease)
+--------------------------------------------------------------
+  Score   : 62.3 / 100
+  Level   : Standard (8th-9th grade)
+  [██████████████████░░░░░░░░░░░░]
+
+  Score guide:
+  90-100  Very Easy  (5th grade)
+  70-80   Easy        (6th-7th grade)
+  60-70   Standard    (8th-9th grade)
+  50-60   Fairly Difficult
+  30-50   Difficult   (college level)
+  0-30    Very Difficult
+
+KEYWORD DENSITY  (Top 10)
+--------------------------------------------------------------
+  Keyword               Count  Density Chart
+  --------------------------------------------------------------
+  text                      3    2.29% ███████████████
+  pipeline                  3    2.29% ███████████████
+  built                     3    2.29% ███████████████
+  processing                2    1.53% ██████████░░░░░
+  python                    2    1.53% ██████████░░░░░
+  libraries                 2    1.53% ██████████░░░░░
+  modular                   2    1.53% ██████████░░░░░
+  clean                     2    1.53% ██████████░░░░░
+  data                      2    1.53% ██████████░░░░░
+  textflow                  1    0.76% █████░░░░░░░░░░
+
+SENTIMENT ANALYSIS  (Rule-based)
+--------------------------------------------------------------
+  Score           :     0.6 (range -1.0 to +1.0)
+  Label            : Positive
+  [░░░░░░░░░░░░░░░█████████░░░░░░]
+  Negative <──────────────────────> Positive
+
+  Positive signals: 8  words
+  Negative signals: 2  words
+  Top positive    : ['amazing', 'clean', 'easy', 'love', 'best']
+  Top negative    : ['fail', 'complex']
+
+TextFlow  |  Pipeline: 'keyword'
+------------------------------------------------------------
+ Stages : 8
+ → normalise_unicode
+ → remove_urls
+ → remove_html
+ → to_lowercase
+ → remove_punctuation config={'keep': ''}
+ → remove_stopwords config={'lang': 'en'}
+ → filter_short config={'min_length': 4}
+ → strip_whitespace
+Running stage: normalise_unicode...
+Running stage: remove_urls...
+Running stage: remove_html...
+Running stage: to_lowercase...
+Running stage: remove_punctuation...
+Running stage: remove_stopwords...
+Running stage: filter_short...
+Running stage: strip_whitespace...
+==============================================================
+               TextFlow — Text Analytics Report               
+==============================================================
+  Pipeline      : keyword
+  Stages run    : 8
+  Input chars   : 830
+  Output chars  : 627
+  Chars removed : 203  (24.5%)
+==============================================================
+
+PIPELINE STAGE LOG
+--------------------------------------------------------------
+ Stage                      Before   After  Removed
+  --------------------------------------------------------------
+ normalise_unicode              830      833        -3
+ remove_urls                    833      828         5 <
+ remove_html                    828      816        12 <
+ to_lowercase                   816      816         0
+ remove_punctuation             816      779        37 <
+ remove_stopwords               779      639       140 <
+ filter_short                   639      627        12 <
+ strip_whitespace               627      627         0
+
+TEXT PREVIEW  (Original)
+--------------------------------------------------------------
+  
+TextFlow is an amazing text processing pipeline built entirely with Python.
+It doesn't use any external libraries — it can't rely on pandas or NLTK.
+The system won't fail even with messy input like U...
+
+TEXT PREVIEW  (Processed)
+--------------------------------------------------------------
+  textflow amazing text processing pipeline built entirely python doesnt external libraries cant rely pandas nltk system wont fail messy input like urls httpsexamplecom html tags bold text line breaks p...
+
+WORD STATISTICS (Original)
+--------------------------------------------------------------
+ Word count      : 126
+ Unique words    : 96
+ Sentence count  : 11
+ Avg word length : 5.4 chars
+ Avg sent length : 11.5 words
+ Longest word    : (https://example.com)
+ Shortest word   : —
+
+WORD STATISTICS (Processed)
+--------------------------------------------------------------
+ Word count      : 84
+ Unique words    : 71
+ Sentence count  : 1
+ Avg word length : 6.5 chars
+ Avg sent length : 84.0 words
+ Longest word    : httpsexamplecom
+ Shortest word   : text
+
+READABILITY (Flesch Reading Ease)
+--------------------------------------------------------------
+  Score   : 62.3 / 100
+  Level   : Standard (8th-9th grade)
+  [██████████████████░░░░░░░░░░░░]
+
+  Score guide:
+  90-100  Very Easy  (5th grade)
+  70-80   Easy        (6th-7th grade)
+  60-70   Standard    (8th-9th grade)
+  50-60   Fairly Difficult
+  30-50   Difficult   (college level)
+  0-30    Very Difficult
+
+KEYWORD DENSITY  (Top 10)
+--------------------------------------------------------------
+  Keyword               Count  Density Chart
+  --------------------------------------------------------------
+  text                      3    3.57% ███████████████
+  pipeline                  3    3.57% ███████████████
+  built                     3    3.57% ███████████████
+  processing                2    2.38% ██████████░░░░░
+  python                    2    2.38% ██████████░░░░░
+  doesnt                    2    2.38% ██████████░░░░░
+  libraries                 2    2.38% ██████████░░░░░
+  modular                   2    2.38% ██████████░░░░░
+  clean                     2    2.38% ██████████░░░░░
+  data                      2    2.38% ██████████░░░░░
+
+SENTIMENT ANALYSIS  (Rule-based)
+--------------------------------------------------------------
+  Score           :     0.6 (range -1.0 to +1.0)
+  Label            : Positive
+  [░░░░░░░░░░░░░░░█████████░░░░░░]
+  Negative <──────────────────────> Positive
+
+  Positive signals: 8  words
+  Negative signals: 2  words
+  Top positive    : ['amazing', 'clean', 'easy', 'love', 'best']
+  Top negative    : ['fail', 'complex']
